@@ -58,6 +58,7 @@ class _AuthPageState extends State<AuthPage> {
                 controller: authProvider.emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email),
                   labelText: 'Email',
                   labelStyle: TextStyle(color: Colors.grey),
                   border: OutlineInputBorder(
@@ -81,6 +82,7 @@ class _AuthPageState extends State<AuthPage> {
                 controller: authProvider.passwordController,
                 obscureText: authProvider.obscurePassword,
                 decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.lock),
                   suffixIcon: IconButton(
                     onPressed: () {
                       context.read<AuthController>().actionObscurePassword();
