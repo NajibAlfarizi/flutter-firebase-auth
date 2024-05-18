@@ -2,8 +2,10 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_firebase_app/utils/push_notification_service.dart';
 
 class AuthController extends ChangeNotifier {
+  PushNotificationService pushNotificationService = PushNotificationService();
   final formKeyLogin = GlobalKey<FormState>();
   final formKeyRegister = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
@@ -51,6 +53,8 @@ class AuthController extends ChangeNotifier {
         username = emailController.text;
         uid = dataUser.uid;
         loginState = StateLogin.success;
+        pushNotificationService.showNotification(
+            'Succes', 'Congratulation, You Have Succesfully Login');
         showAlertSucces(context, 'Login Success', uid, () {
           Navigator.pop(context);
         });

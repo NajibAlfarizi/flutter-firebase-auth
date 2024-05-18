@@ -27,7 +27,6 @@ class _AuthPageState extends State<AuthPage> {
           padding: const EdgeInsets.only(left: 24, right: 24),
           child: ListView(
             children: [
-              SizedBox(height: 16),
               Container(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,

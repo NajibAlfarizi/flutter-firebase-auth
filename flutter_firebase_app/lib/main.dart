@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import 'auth_page.dart';
 import 'controller/auth_Controller.dart';
+import 'package:flutter_firebase_app/utils/push_notification_service.dart';
 import 'firebase_options.dart';
 
 void main(List<String> args) {
@@ -16,6 +17,7 @@ Future initFirebase() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await PushNotificationService().initialize();
   runApp(const Main());
 }
 
